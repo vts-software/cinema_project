@@ -1,0 +1,75 @@
+/* Стили для форм приложения accounts (регистрация, вход, профиль и т.п.) */
+
+.accounts-form-container {
+    max-width: 480px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.accounts-form-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.accounts-form-field {
+    margin-bottom: 18px;
+}
+
+.accounts-form-field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.accounts-form-field input,
+.accounts-form-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.accounts-form-field input:focus,
+.accounts-form-field textarea:focus {
+    outline: none;
+    border-color: #f5c518;
+    box-shadow: 0 0 4px rgba(245, 197, 24, 0.4);
+}
+
+/* Ошибки */
+.errorlist {
+    color: #b30000;
+    font-size: 0.9rem;
+    margin: 5px 0 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.errorlist li::before {
+    content: "⚠ ";
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: #f5c518;
+    color: #222;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #e4b60e;
+}

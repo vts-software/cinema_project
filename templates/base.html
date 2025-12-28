@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Кинотеатр{% endblock %}</title>
+
+    <!-- Основной стиль -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="navbar">
+            <h1 class="logo"><a href="{% url 'home' %}">🎬 Кинотеатр</a></h1>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'accounts:profile' %}">Профиль</a></li>
+                        <li>
+                            <form action="{% url 'accounts:logout' %}" method="post" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-btn">Выйти</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}">Вход</a></li>
+                        <li><a href="{% url 'accounts:register' %}">Регистрация</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FLASH MESSAGES -->
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Кинотеатр | Все права защищены</p>
+    </footer>
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

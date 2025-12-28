@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Virtual environment
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# Django
+*.log
+*.pot
+*.pyc
+media/
+staticfiles/
+local_settings.py
+
+# IDE / Editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# pytest / coverage
+.coverage
+htmlcov/
+pytest_cache/
+.cache/
+
+# Migrations backups
+**/migrations/__pycache__/
+**/migrations/*.pyc
+# (оставляем миграции, но можно исключить, если хочешь)
+# **/migrations/
+
+# Node / front (если появится)
+node_modules/
+npm-debug.log
+yarn-error.log

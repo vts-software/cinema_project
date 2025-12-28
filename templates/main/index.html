@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Главная | Кинотеатр{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Добро пожаловать в наш Кинотеатр!</h1>
+    <p>Смотрите лучшие фильмы в комфортных залах. Бронируйте билеты онлайн.</p>
+    <a href="#">Посмотреть расписание</a>
+</section>
+
+<section>
+    <h2> Сейчас в прокате </h2>
+    <div class="movies">
+        
+
+        <div class="movie-card">
+            <h3>Интерстеллар</h3>
+            <p>Фантастика, Драма</p>
+            <img src="{% static 'images/movie1.jpg' %}" alt="Movie 1">
+        </div>
+        <div class="movie-card">
+            <h3>Начало</h3>
+            <p>Триллер, Фантастика</p>
+            <img src="{% static 'images/movie2.jpg' %}" alt="Movie 2">
+        </div>
+        <div class="movie-card">
+            <h3>Темный рыцарь</h3>
+            <p>Боевик, Драма</p>
+            <img src="{% static 'images/movie3.jpg' %}" alt="Movie 3">
+        </div>
+    </div>
+</section>
+{% endblock %}
